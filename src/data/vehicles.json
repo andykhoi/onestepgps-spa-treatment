@@ -1,0 +1,172 @@
+{
+  "vehicles": [
+    {
+      "title": "Vehicle #1",
+      "driver": "",
+      "license_plate_number": "HYB23G60",
+      "vin": "002244021010",
+      "odometer": "103300",
+      "last_service_date": "10-02-2023",
+      "status": {
+        "active": false,
+        "location": "Los Angeles, CA",
+        "bearing": 20,
+        "speed": 34
+      }
+    },
+    {
+      "title": "Vehicle #2",
+      "driver": "John Doe",
+      "license_plate_number": "ABC12345",
+      "vin": "1HGCM82633A004352",
+      "odometer": "87000",
+      "last_service_date": "05-20-2024",
+      "status": {
+        "active": true,
+        "location": "New York, NY",
+        "bearing": 90,
+        "speed": 55
+      }
+    },
+    {
+      "title": "Vehicle #3",
+      "driver": "",
+      "license_plate_number": "JKL56789",
+      "vin": "3FAHP0HA6AR332042",
+      "odometer": "45000",
+      "last_service_date": "04-18-2024",
+      "status": {
+        "active": true,
+        "location": "Chicago, IL",
+        "bearing": 180,
+        "speed": 25
+      }
+    },
+    {
+      "title": "Vehicle #4",
+      "driver": "Jane Smith",
+      "license_plate_number": "MNO89012",
+      "vin": "1N4AL3AP1GC222344",
+      "odometer": "120000",
+      "last_service_date": "12-05-2023",
+      "status": {
+        "active": false,
+        "location": "Houston, TX",
+        "bearing": 270,
+        "speed": 0
+      }
+    },
+    {
+      "title": "Vehicle #5",
+      "driver": "",
+      "license_plate_number": "XYZ23456",
+      "vin": "2C3CDXBG8FH700123",
+      "odometer": "60000",
+      "last_service_date": "03-15-2024",
+      "status": {
+        "active": true,
+        "location": "San Francisco, CA",
+        "bearing": 45,
+        "speed": 45
+      }
+    },
+    {
+      "title": "Vehicle #6",
+      "driver": "Michael Brown",
+      "license_plate_number": "ZXC34567",
+      "vin": "1GCHK23U94F123456",
+      "odometer": "98000",
+      "last_service_date": "01-22-2024",
+      "status": {
+        "active": true,
+        "location": "Austin, TX",
+        "bearing": 60,
+        "speed": 40
+      }
+    },
+    {
+      "title": "Vehicle #7",
+      "driver": "",
+      "license_plate_number": "QWE67890",
+      "vin": "5N1AR2MM1FC678901",
+      "odometer": "72000",
+      "last_service_date": "09-10-2023",
+      "status": {
+        "active": false,
+        "location": "Denver, CO",
+        "bearing": 150,
+        "speed": 0
+      }
+    },
+    {
+      "title": "Vehicle #8",
+      "driver": "Emily Davis",
+      "license_plate_number": "RTY90123",
+      "vin": "JH4KA9650MC012345",
+      "odometer": "50000",
+      "last_service_date": "02-14-2024",
+      "status": {
+        "active": true,
+        "location": "Seattle, WA",
+        "bearing": 80,
+        "speed": 30
+      }
+    },
+    {
+      "title": "Vehicle #9",
+      "driver": "",
+      "license_plate_number": "UJM45678",
+      "vin": "1G6KD57Y46U178901",
+      "odometer": "40000",
+      "last_service_date": "11-20-2023",
+      "status": {
+        "active": true,
+        "location": "Portland, OR",
+        "bearing": 210,
+        "speed": 50
+      }
+    },
+    {
+      "title": "Vehicle #10",
+      "driver": "David Wilson",
+      "license_plate_number": "IOP09876",
+      "vin": "WDDHF5KB6CA567890",
+      "odometer": "53000",
+      "last_service_date": "08-30-2023",
+      "status": {
+        "active": false,
+        "location": "Miami, FL",
+        "bearing": 300,
+        "speed": 20
+      }
+    },
+    {
+      "title": "Vehicle #11",
+      "driver": "",
+      "license_plate_number": "PLK54321",
+      "vin": "1HGFA16596L678901",
+      "odometer": "110000",
+      "last_service_date": "04-01-2024",
+      "status": {
+        "active": true,
+        "location": "Atlanta, GA",
+        "bearing": 120,
+        "speed": 60
+      }
+    },
+    {
+      "title": "Vehicle #12",
+      "driver": "Sarah Johnson",
+      "license_plate_number": "CVB67890",
+      "vin": "2T1BR32E54C123456",
+      "odometer": "67000",
+      "last_service_date": "03-05-2024",
+      "status": {
+        "active": true,
+        "location": "Dallas, TX",
+        "bearing": 340,
+        "speed": 70
+      }
+    }
+  ]
+}
