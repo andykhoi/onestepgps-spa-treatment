@@ -6,20 +6,44 @@ import { useDraggable } from '@vueuse/core'
 import { useStore } from 'vuex'
 
 const el = ref(null)
+const open = ref(false)
+const threshold = ref(100)
+const transitionClass = ref('')
 
 const store = useStore()
 
 const activeVehicles = computed(() => store.getters.getActiveVehicles)
 
-const { style } = useDraggable(el, {
-  initialValue: { x: 0, y: 0 },
+const { x, y } = useDraggable(el, {
+  initialValue: { x: 0, y: document.innerHeight - 100 },
   axis: 'y',
-  pointerTypes: ['touch']
+  pointerTypes: ['touch'],
+  onEnd: (pointer, event) => {
+    const screenHeight = event.view.innerHeight
+    const drawerHeight = 100
+    const pointerY = pointer.y
+
+    // Add transition class before changing position
+    transitionClass.value = 'drawer-transition'
+
+    if (open.value && pointerY > threshold.value) {
+      open.value = false
+      y.value = screenHeight - drawerHeight
+    } else if (!open.value && pointerY < screenHeight - threshold.value) {
+      open.value = true
+      y.value = 0
+    }
+
+    // Remove transition class after the transition is done
+    setTimeout(() => {
+      transitionClass.value = ''
+    }, 300) // Match this duration with your CSS transition duration
+  }
 })
 </script>
 
 <template>
-  <div class="drawer" :style="style">
+  <div :class="['drawer', transitionClass]" :style="{ top: `${y}px`, left: `${x}px` }">
     <div ref="el" class="handle">
       <div class="bar"></div>
     </div>
@@ -97,12 +121,14 @@ const { style } = useDraggable(el, {
   height: 100%;
   touch-action: none;
   display: flex;
+  bottom: calc(-100% + 100px);
   flex-direction: column;
   background-color: #f5f5f5;
   position: fixed;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.32);
+  /* transition: top 0.3s ease-in-out; */
   /* padding: 0px 28px; */
   color: #000000;
 }
@@ -129,7 +155,7 @@ const { style } = useDraggable(el, {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 28px 12px 28px;
+  padding: 12px 28px 24px 28px;
 }
 
 .vehicle-icon {
@@ -144,5 +170,9 @@ const { style } = useDraggable(el, {
 
 .driver-initials {
   color: white;
+}
+
+.drawer-transition {
+  transition: top 0.3s ease-in-out;
 }
 </style>
