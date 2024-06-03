@@ -29,15 +29,20 @@ const { x, y } = useDraggable(el, {
     if (open.value && pointerY > threshold.value) {
       open.value = false
       y.value = screenHeight - drawerHeight
-    } else if (!open.value && pointerY < screenHeight - threshold.value) {
-      open.value = true
-      y.value = 0
+    } else if (!open.value) {
+      if (pointerY < screenHeight - threshold.value) {
+        open.value = true
+        y.value = 0 // Adjust this value as needed
+      } else {
+        // If the drawer is closed and moved downward, move it back to the closed position
+        y.value = screenHeight - drawerHeight
+      }
     }
 
     // Remove transition class after the transition is done
     setTimeout(() => {
       transitionClass.value = ''
-    }, 300) // Match this duration with your CSS transition duration
+    }, 200) // Match this duration with your CSS transition duration
   }
 })
 </script>
@@ -131,6 +136,7 @@ const { x, y } = useDraggable(el, {
   /* transition: top 0.3s ease-in-out; */
   /* padding: 0px 28px; */
   color: #000000;
+  z-index: 100;
 }
 .handle {
   padding: 12px;
@@ -173,6 +179,12 @@ const { x, y } = useDraggable(el, {
 }
 
 .drawer-transition {
-  transition: top 0.3s ease-in-out;
+  transition: top 0.2s ease-in-out;
+}
+
+@media screen and (min-width: 767px) {
+  .drawer {
+    display: none;
+  }
 }
 </style>

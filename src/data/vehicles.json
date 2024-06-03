@@ -1,6 +1,7 @@
 {
   "vehicles": [
     {
+      "model": "sedan",
       "title": "Vehicle #1",
       "driver": "",
       "license_plate_number": "HYB23G60",
@@ -15,6 +16,7 @@
       }
     },
     {
+      "model": "sedan",
       "title": "Vehicle #2",
       "driver": "John Doe",
       "license_plate_number": "ABC12345",
@@ -29,6 +31,7 @@
       }
     },
     {
+      "model": "suv",
       "title": "Vehicle #3",
       "driver": "",
       "license_plate_number": "JKL56789",
@@ -43,6 +46,7 @@
       }
     },
     {
+      "model": "suv",
       "title": "Vehicle #4",
       "driver": "Jane Smith",
       "license_plate_number": "MNO89012",
@@ -57,6 +61,7 @@
       }
     },
     {
+      "model": "suv",
       "title": "Vehicle #5",
       "driver": "",
       "license_plate_number": "XYZ23456",
@@ -71,6 +76,7 @@
       }
     },
     {
+      "model": "truck",
       "title": "Vehicle #6",
       "driver": "Michael Brown",
       "license_plate_number": "ZXC34567",
@@ -85,6 +91,7 @@
       }
     },
     {
+      "model": "truck",
       "title": "Vehicle #7",
       "driver": "",
       "license_plate_number": "QWE67890",
@@ -99,6 +106,7 @@
       }
     },
     {
+      "model": "truck",
       "title": "Vehicle #8",
       "driver": "Emily Davis",
       "license_plate_number": "RTY90123",
@@ -113,6 +121,7 @@
       }
     },
     {
+      "model": "sedan",
       "title": "Vehicle #9",
       "driver": "",
       "license_plate_number": "UJM45678",
@@ -127,6 +136,7 @@
       }
     },
     {
+      "model": "sedan",
       "title": "Vehicle #10",
       "driver": "David Wilson",
       "license_plate_number": "IOP09876",
@@ -141,6 +151,7 @@
       }
     },
     {
+      "model": "sedan",
       "title": "Vehicle #11",
       "driver": "",
       "license_plate_number": "PLK54321",
@@ -155,6 +166,7 @@
       }
     },
     {
+      "model": "sedan",
       "title": "Vehicle #12",
       "driver": "Sarah Johnson",
       "license_plate_number": "CVB67890",
