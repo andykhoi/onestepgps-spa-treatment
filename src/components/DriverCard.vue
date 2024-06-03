@@ -52,6 +52,7 @@
   border-radius: 18px;
   background-color: #e8e8e8;
   position: relative;
+  max-width: 100%;
   /* padding: 4px 0px; */
 }
 
@@ -91,6 +92,7 @@
   flex-grow: 2;
   display: flex;
   flex-direction: column;
+  max-width: calc(100% - 140px);
   /* width: 100%; */
 }
 
@@ -114,5 +116,8 @@
 .driver-card-form-entry p:last-of-type {
   font-size: 16px;
   font-weight: 500;
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide the overflowed text */
+  text-overflow: ellipsis; /* Display ellipsis (...) when text overflows */
 }
 </style>

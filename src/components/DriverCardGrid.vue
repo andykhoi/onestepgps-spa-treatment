@@ -16,7 +16,14 @@ import DriverCard from './DriverCard.vue'
 <style scoped>
 .driver-card-grid {
   display: grid;
-  grid-gap: 20px;
-  padding: 0px 20px;
+  grid-gap: 24px;
+  padding: 24px 20px;
+  grid-template-columns: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .driver-card-grid {
+    grid-template-columns: calc(50% - 12px) calc(50% - 12px);
+  }
 }
 </style>
