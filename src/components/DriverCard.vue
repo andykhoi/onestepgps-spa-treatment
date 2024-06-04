@@ -21,7 +21,7 @@
     </div>
     <div class="driver-card-col-1">
       <div class="headshot">
-        <img src="/headshot1.png" />
+        <img src="../assets/images/headshot1.png" />
       </div>
       <div class="driver-card-form-entry">
         <p>License #</p>

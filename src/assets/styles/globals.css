@@ -4,6 +4,7 @@ body {
   min-width: 320px;
 }
 
-.app {
+#app {
   font-family: 'BeVietnamPro', sans-serif;
+  background-color: #f0f0f0;
 }
