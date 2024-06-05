@@ -69,6 +69,7 @@
   padding: 4px 12px;
   font-size: 0.8rem;
   top: -4px;
+  box-shadow: 0px 0px 1px #0000005c;
 }
 
 .vehicle-card-edit {
@@ -140,7 +141,7 @@
   }
   .vehicle-card {
     flex-direction: row;
-    height: 156px;
+    height: 144px;
     padding-bottom: 0;
   }
 

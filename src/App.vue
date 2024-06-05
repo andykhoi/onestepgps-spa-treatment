@@ -6,6 +6,7 @@ import VehicleCardGrid from './components/VehicleCardGrid.vue'
 import SidepanelTitle from './components/SidepanelTitle.vue'
 import SidepanelVehicles from './components/SidepanelVehicles.vue'
 import DriverSearch from './components/DriverSearch.vue'
+import VehicleSearch from './components/VehicleSearch.vue'
 </script>
 
 <template>
@@ -18,13 +19,14 @@ import DriverSearch from './components/DriverSearch.vue'
     </div>
     <div class="content">
       <MobileControlPanel />
-      <!-- <div>
+      <div class="vehicle-content">
+        <VehicleSearch />
         <VehicleCardGrid />
-      </div> -->
-      <div class="driver-content">
+      </div>
+      <!-- <div class="driver-content">
         <DriverSearch />
         <DriverCardGrid />
-      </div>
+      </div> -->
     </div>
     <VehicleDrawer />
   </div>
@@ -36,13 +38,19 @@ import DriverSearch from './components/DriverSearch.vue'
   /* overflow-y: scroll; */
 }
 
-.driver-content {
+.driver-content,
+.vehicle-content {
+  display: flex;
+  flex-direction: column;
   padding-top: 24px;
+  gap: 20px;
 }
 
 @media screen and (min-width: 768px) {
-  .driver-content {
-    padding-top: 8px;
+  .driver-content,
+  .vehicle-content {
+    padding-top: 4px;
+    gap: 16px;
   }
 }
 
@@ -53,8 +61,8 @@ import DriverSearch from './components/DriverSearch.vue'
   }
   .sidepanel {
     display: block;
-    min-width: 420px;
-    max-width: 420px;
+    min-width: 408px;
+    max-width: 408px;
     border-right: 1px solid #d4d4d4;
     /* padding: 0px 40px; */
     display: flex;
@@ -80,7 +88,7 @@ import DriverSearch from './components/DriverSearch.vue'
   }
   .content {
     width: 100%;
-    padding: 0px 40px;
+    padding: 0px 48px;
     height: 100%;
     overflow-y: scroll;
   }

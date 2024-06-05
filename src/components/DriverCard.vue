@@ -48,21 +48,27 @@
 <style scoped>
 .driver-card {
   display: flex;
-  height: 245px;
-  border-radius: 12px;
-  background-color: #e3e3e3;
+  height: 196.5px;
+  border-radius: 18px;
+  background-color: #e6e6e6;
   position: relative;
   max-width: 100%;
   /* padding: 4px 0px; */
 }
 
 .driver-card-new {
+  display: none;
   border-radius: 40px 40px 40px 0px;
   background-color: #dbcd2c;
   position: absolute;
   padding: 4px 12px;
   font-size: 0.8rem;
   top: -4px;
+  box-shadow: 0px 0px 1px #0000005c;
+}
+
+.driver-card-new.active {
+  display: block;
 }
 
 .driver-card-edit {
@@ -72,7 +78,7 @@
 }
 
 .driver-card-col-1 {
-  width: 140px;
+  width: 120px;
   height: 100%;
   border-right: 1px solid #d4d4d4;
   display: flex;
@@ -87,12 +93,16 @@
   height: 100%;
 }
 
+.headshot img {
+  height: 100px;
+}
+
 .driver-card-col-2 {
   height: 100%;
   flex-grow: 2;
   display: flex;
   flex-direction: column;
-  max-width: calc(100% - 140px);
+  max-width: calc(100% - 120px);
   /* width: 100%; */
 }
 
@@ -104,17 +114,17 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 16px 20px;
+  padding: 10px 20px;
   border-top: 1px solid #d4d4d4;
 }
 
 .driver-card-form-entry p:first-of-type {
-  font-size: 14px;
-  font-weight: 300;
+  font-size: 0.8rem;
+  font-weight: 200;
 }
 
 .driver-card-form-entry p:last-of-type {
-  font-size: 16px;
+  font-size: 0.9rem;
   font-weight: 500;
   white-space: nowrap; /* Prevent text from wrapping to the next line */
   overflow: hidden; /* Hide the overflowed text */
@@ -123,14 +133,14 @@
 
 @media screen and (min-width: 768px) {
   .driver-card {
-    height: 208.5px;
+    height: 192.5px;
   }
   .driver-card-form-entry {
-    padding: 12px 20px;
+    padding: 10px 20px;
   }
 
   .driver-card-form-entry p:first-of-type {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .driver-card-form-entry p:last-of-type {

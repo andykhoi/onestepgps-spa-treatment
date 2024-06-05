@@ -72,8 +72,8 @@ defineProps({
 }
 
 .vehicle-icon {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   background-color: #002e6d;
   border-radius: 24px;
   display: flex;

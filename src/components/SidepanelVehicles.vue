@@ -25,8 +25,8 @@ const activeVehicles = computed(() => store.getters.getActiveVehicles)
 <style scoped>
 .active-vehicle-list {
   display: flex;
-  padding-top: 24px;
+  padding-top: 20px;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
 }
 </style>

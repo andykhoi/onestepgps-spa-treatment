@@ -73,7 +73,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
   /* justify-content: center; */
 }
 </style>

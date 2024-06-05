@@ -24,9 +24,13 @@
   display: flex;
   width: 100%;
   height: 52px;
-  background-color: #ededed;
+  /* background-color: #ededed; */
   border-radius: 40px;
-  border: 1px solid #bbbbbb;
+  /* border: 1px solid #bbbbbb; */
+  background-color: #e8e8e8;
+  border: 1px solid #c4c4c4;
+  font-weight: 600;
+  box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.12);
 }
 
 .mobile-add-to-icon {

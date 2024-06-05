@@ -148,10 +148,14 @@ import Switcher from './Switcher.vue'
     padding: 12px 20px 12px 20px;
     align-items: center;
     border-radius: 40px;
-    border: 1px solid #c2c2c2;
+    /* border: 1px solid #c2c2c2; */
     background-color: #e8e8e8;
     font-size: 14px;
     font-weight: 600;
+    /* fill: #e8e8e8; */
+    /* stroke-width: 1px; */
+    border: 1px solid #c4c4c4;
+    box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.12);
   }
 }
 @media screen and (min-width: 992px) {

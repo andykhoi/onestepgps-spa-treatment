@@ -10,11 +10,11 @@
   display: none;
   width: 100%;
   height: 60px;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #bfbfbf;
   background-color: #ededed;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.16);
-  border-radius: 16px;
-  margin-top: 20px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  margin-top: 16px;
 }
 
 .switcher-button {
@@ -22,12 +22,13 @@
   justify-content: center;
   align-items: center;
   font-size: 1.1rem;
+  font-weight: 500;
   flex-grow: 1;
-  border-radius: 16px;
+  border-radius: 8px;
 }
 
 .switcher-button.active {
-  background-color: #3d3d3d;
+  background-color: hsl(0 0% 20% / 1);
   color: white;
 }
 
