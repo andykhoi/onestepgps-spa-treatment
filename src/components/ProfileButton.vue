@@ -15,8 +15,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ededed;
-  border: 1px solid #bbbbbb;
-  border-radius: 30px;
+  cursor: pointer;
+  /* background-color: #ededed; */
+  /* border: 1px solid #bbbbbb; */
+  /* border-radius: 30px; */
 }
 </style>

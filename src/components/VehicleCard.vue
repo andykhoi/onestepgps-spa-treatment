@@ -66,8 +66,8 @@
   border-radius: 40px 40px 40px 0px;
   background-color: #dbcd2c;
   position: absolute;
-  padding: 6px 20px;
-  font-size: 14px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
   top: -4px;
 }
 
@@ -108,19 +108,16 @@
 }
 
 .vehicle-card-spec p:first-of-type {
-  font-size: 14px;
+  font-size: 0.8rem;
   font-weight: 300;
 }
 
 .vehicle-card-spec p:last-of-type {
-  font-size: 16px;
+  font-size: 0.9rem;
   font-weight: 500;
   white-space: nowrap; /* Prevent text from wrapping to the next line */
   overflow: hidden; /* Hide the overflowed text */
   text-overflow: ellipsis; /* Display ellipsis (...) when text overflows */
-}
-
-.vehicle-card-spec {
 }
 
 .vehicle-card-specs::-webkit-scrollbar {
@@ -143,13 +140,13 @@
   }
   .vehicle-card {
     flex-direction: row;
-    height: 188px;
+    height: 156px;
     padding-bottom: 0;
   }
 
   .vehicle-card-model {
     height: 100%;
-    min-width: 250px;
+    /* min-width: 250px; */
     max-width: 250px;
     border-right: 1px solid #d4d4d4;
   }
@@ -184,6 +181,7 @@
     flex-direction: column;
     /* justify-content: left; */
     justify-content: center;
+    white-space: nowrap;
     /* border-bottom: 1px solid #d4d4d4; */
   }
 

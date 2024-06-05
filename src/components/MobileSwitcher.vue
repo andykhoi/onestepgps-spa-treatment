@@ -39,4 +39,10 @@
   /* padding-top: 20px; */
   margin-top: 12px;
 }
+
+@media screen and (min-width: 768px) {
+  .mobile-switcher {
+    display: none;
+  }
+}
 </style>

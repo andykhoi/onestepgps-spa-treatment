@@ -31,14 +31,32 @@ defineProps({
     </div>
     <div class="vehicle-information">
       <div class="vehicle-name-location">
-        <div>
+        <div class="vehicle-name">
           {{ driver || title }}
         </div>
-        <div>
+        <div class="vehicle-location">
           {{ location }}
         </div>
       </div>
-      <div>{{ speed }} mph</div>
+      <div class="vehicle-direction-speed">
+        <div class="vehicle-direction">
+          <svg
+            width="20"
+            height="24"
+            viewBox="0 0 20 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.217 15.1524L9.99526 14.8175L9.60346 14.729L2.46845 13.1184L18.4815 2.24045L14.2786 21.2857L10.217 15.1524Z"
+              fill="#1BA6FF"
+              stroke="#004E7F"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <div class="vehicle-speed">{{ speed }} mph</div>
+      </div>
     </div>
   </div>
 </template>
@@ -48,9 +66,9 @@ defineProps({
   display: flex;
   width: 100%;
   gap: 20px;
-
-  border-bottom: 1px solid #c7c7c7;
-  padding: 24px 28px;
+  font-size: 0.9rem;
+  /* border-bottom: 1px solid #c7c7c7; */
+  /* padding: 24px 28px; */
 }
 
 .vehicle-icon {
@@ -66,11 +84,31 @@ defineProps({
 
 .driver-initials {
   color: white;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.vehicle-name {
+  font-weight: 500;
 }
 
 .vehicle-information {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
+}
+
+.vehicle-direction-speed {
+  display: flex;
+  gap: 16px;
+}
+
+.vehicle-speed {
+  font-weight: 500;
+}
+
+.vehicle-location {
+  font-weight: 300;
 }
 </style>

@@ -48,9 +48,9 @@
 <style scoped>
 .driver-card {
   display: flex;
-  height: 257px;
-  border-radius: 18px;
-  background-color: #e8e8e8;
+  height: 245px;
+  border-radius: 12px;
+  background-color: #e3e3e3;
   position: relative;
   max-width: 100%;
   /* padding: 4px 0px; */
@@ -60,8 +60,8 @@
   border-radius: 40px 40px 40px 0px;
   background-color: #dbcd2c;
   position: absolute;
-  padding: 6px 20px;
-  font-size: 14px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
   top: -4px;
 }
 
@@ -74,7 +74,7 @@
 .driver-card-col-1 {
   width: 140px;
   height: 100%;
-  border-right: 1px solid #d9d9d9;
+  border-right: 1px solid #d4d4d4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -103,9 +103,9 @@
 .driver-card-form-entry {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   padding: 16px 20px;
-  border-top: 1px solid #d9d9d9;
+  border-top: 1px solid #d4d4d4;
 }
 
 .driver-card-form-entry p:first-of-type {
@@ -119,5 +119,22 @@
   white-space: nowrap; /* Prevent text from wrapping to the next line */
   overflow: hidden; /* Hide the overflowed text */
   text-overflow: ellipsis; /* Display ellipsis (...) when text overflows */
+}
+
+@media screen and (min-width: 768px) {
+  .driver-card {
+    height: 208.5px;
+  }
+  .driver-card-form-entry {
+    padding: 12px 20px;
+  }
+
+  .driver-card-form-entry p:first-of-type {
+    font-size: 0.8rem;
+  }
+
+  .driver-card-form-entry p:last-of-type {
+    font-size: 0.9rem;
+  }
 }
 </style>
