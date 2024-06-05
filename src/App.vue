@@ -19,14 +19,14 @@ import VehicleSearch from './components/VehicleSearch.vue'
     </div>
     <div class="content">
       <MobileControlPanel />
-      <div class="vehicle-content">
+      <!-- <div class="vehicle-content">
         <VehicleSearch />
         <VehicleCardGrid />
-      </div>
-      <!-- <div class="driver-content">
+      </div> -->
+      <div class="driver-content">
         <DriverSearch />
         <DriverCardGrid />
-      </div> -->
+      </div>
     </div>
     <VehicleDrawer />
   </div>
