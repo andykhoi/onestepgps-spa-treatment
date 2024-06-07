@@ -1,3 +1,13 @@
+<script setup>
+import { useStore } from 'vuex'
+
+const store = useStore()
+
+const showModal = ({ modalName, id }) => {
+  store.dispatch('showModal', { modalName, id })
+}
+</script>
+
 <template>
   <div class="mobile-add-tos">
     <div class="mobile-add-to-icon">
@@ -14,7 +24,12 @@
         />
       </svg>
     </div>
-    <div class="mobile-add-to-button mobile-add-to-vehicle">Vehicle</div>
+    <div
+      class="mobile-add-to-button mobile-add-to-vehicle"
+      @click="showModal({ modalName: 'vehicleModal', id: null })"
+    >
+      Vehicle
+    </div>
     <div class="mobile-add-to-button mobile-add-to-driver">Driver</div>
   </div>
 </template>

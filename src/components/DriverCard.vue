@@ -1,7 +1,21 @@
+<script setup>
+defineProps({
+  driver: Object
+})
+
+import { useStore } from 'vuex'
+
+const store = useStore()
+
+const showModal = (modalName, id) => {
+  store.dispatch('showModal', { modalName, id })
+}
+</script>
+
 <template>
   <div class="driver-card">
     <div class="driver-card-new">Recently Added</div>
-    <div class="driver-card-edit">
+    <div class="driver-card-edit" @click="showModal('driverModal', driver.id)">
       <svg
         width="40"
         height="40"
@@ -21,25 +35,26 @@
     </div>
     <div class="driver-card-col-1">
       <div class="headshot">
-        <img src="../assets/images/headshot1.png" />
+        <img :src="`/${driver.image}`" />
+        <!-- <img src="../assets/images/headshot2.png" /> -->
       </div>
       <div class="driver-card-form-entry">
         <p>License #</p>
-        <p>F3FFK309</p>
+        <p>{{ driver.licenseNumber }}</p>
       </div>
     </div>
     <div class="driver-card-col-2">
       <div class="driver-card-form-entry">
         <p>Name</p>
-        <p>Janice Carr</p>
+        <p>{{ driver.name }}</p>
       </div>
       <div class="driver-card-form-entry">
         <p>Email</p>
-        <p>jac@gmail.com</p>
+        <p>{{ driver.email }}</p>
       </div>
       <div class="driver-card-form-entry">
         <p>Phone Number</p>
-        <p>(661) 271-1040</p>
+        <p>{{ driver.phoneNumber }}</p>
       </div>
     </div>
   </div>
@@ -94,7 +109,10 @@
 }
 
 .headshot img {
+  width: 80px;
   height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 .driver-card-col-2 {

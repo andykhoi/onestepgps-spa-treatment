@@ -1,18 +1,25 @@
 <script setup>
 import DriverCard from './DriverCard.vue'
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+
+const store = useStore()
+
+const drivers = computed(() => store.getters.getDrivers)
 </script>
 
 <template>
   <!-- <div></div> -->
   <div class="driver-card-grid">
+    <DriverCard v-for="driver in drivers" :key="driver.id" :driver="driver" />
+    <!-- <DriverCard />
     <DriverCard />
     <DriverCard />
     <DriverCard />
     <DriverCard />
     <DriverCard />
     <DriverCard />
-    <DriverCard />
-    <DriverCard />
+    <DriverCard /> -->
   </div>
 </template>
 

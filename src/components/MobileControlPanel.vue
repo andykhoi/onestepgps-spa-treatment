@@ -3,6 +3,14 @@ import MobileAddTos from './MobileAddTos.vue'
 import ProfileButton from './ProfileButton.vue'
 import MobileSwitcher from './MobileSwitcher.vue'
 import Switcher from './Switcher.vue'
+
+import { useStore } from 'vuex'
+
+const store = useStore()
+
+const showModal = ({ modalName, id }) => {
+  store.dispatch('showModal', { modalName, id })
+}
 </script>
 
 <template>
@@ -45,7 +53,7 @@ import Switcher from './Switcher.vue'
         </svg>
       </div>
       <div class="add-tos-wrapper">
-        <div class="add-to-vehicle">
+        <div class="add-to-vehicle" @click="showModal({ modalName: 'vehicleModal', id: null })">
           <svg
             width="28"
             height="28"
@@ -60,7 +68,7 @@ import Switcher from './Switcher.vue'
           </svg>
           Add Vehicle
         </div>
-        <div class="add-to-driver">
+        <div class="add-to-driver" @click="showModal({ modalName: 'driverModal', id: null })">
           <svg
             width="28"
             height="28"
@@ -104,7 +112,7 @@ import Switcher from './Switcher.vue'
 }
 
 .mobile-control-panel {
-  padding: 24px 20px 0px 20px;
+  padding: 20px 20px 0px 20px;
   border-bottom: 1px solid #d9d9d9;
   position: sticky;
   top: 0;

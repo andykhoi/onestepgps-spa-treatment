@@ -65,7 +65,7 @@ defineProps({
 .active-vehicle {
   display: flex;
   width: 100%;
-  gap: 20px;
+  gap: 16px;
   font-size: 0.9rem;
   /* border-bottom: 1px solid #c7c7c7; */
   /* padding: 24px 28px; */

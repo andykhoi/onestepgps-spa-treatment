@@ -4,6 +4,10 @@ body {
   min-width: 320px;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 #app {
   font-family: 'BeVietnamPro', sans-serif;
   background-color: #f1f1f1;

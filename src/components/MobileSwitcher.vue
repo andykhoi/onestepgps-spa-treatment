@@ -21,8 +21,8 @@
   width: 50%;
   text-align: center;
   position: relative;
-  padding-top: 20px;
-  margin-top: 8px;
+  padding-top: 12px;
+  margin-top: 4px;
   /* padding: 20px 0px; */
 }
 

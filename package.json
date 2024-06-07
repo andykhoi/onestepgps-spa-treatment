@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.10.0",
+    "uuid": "^9.0.1",
     "vue": "^3.4.21",
     "vuedraggable": "^4.1.0",
     "vuex": "^4.0.2"

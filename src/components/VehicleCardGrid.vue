@@ -1,5 +1,12 @@
 <script setup>
 import VehicleCard from './VehicleCard.vue'
+
+import { useStore } from 'vuex'
+
+// const store = useStore()
+
+// const drivers = store.getters.getDrivers
+// console.log(drivers)
 </script>
 
 <template>

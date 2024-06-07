@@ -7,6 +7,7 @@ import SidepanelTitle from './components/SidepanelTitle.vue'
 import SidepanelVehicles from './components/SidepanelVehicles.vue'
 import DriverSearch from './components/DriverSearch.vue'
 import VehicleSearch from './components/VehicleSearch.vue'
+import Modal from './components/modals/Modal.vue'
 </script>
 
 <template>
@@ -28,6 +29,7 @@ import VehicleSearch from './components/VehicleSearch.vue'
         <DriverCardGrid />
       </div>
     </div>
+    <Modal />
     <VehicleDrawer />
   </div>
 </template>
@@ -61,8 +63,8 @@ import VehicleSearch from './components/VehicleSearch.vue'
   }
   .sidepanel {
     display: block;
-    min-width: 408px;
-    max-width: 408px;
+    min-width: 400px;
+    max-width: 400px;
     border-right: 1px solid #d4d4d4;
     /* padding: 0px 40px; */
     display: flex;

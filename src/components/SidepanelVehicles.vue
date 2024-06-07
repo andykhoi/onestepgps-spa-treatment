@@ -27,6 +27,6 @@ const activeVehicles = computed(() => store.getters.getActiveVehicles)
   display: flex;
   padding-top: 20px;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
 }
 </style>
