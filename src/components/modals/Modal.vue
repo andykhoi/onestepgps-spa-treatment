@@ -65,7 +65,7 @@ watch(activeModal, () => {
   .modal-wrapper {
     /* height: 740px; */
     height: auto;
-    width: 696px;
+    width: 640px;
     border-radius: 12px;
     overflow: hidden;
   }

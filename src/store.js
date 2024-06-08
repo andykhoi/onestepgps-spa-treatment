@@ -6,13 +6,33 @@ import drivers from './data/drivers.json'
 export default createStore({
   state: {
     drivers: drivers,
-    vehicles: vehicles.vehicles,
+    vehicles: vehicles,
     modal: {
       modalName: '',
       id: ''
     }
   },
   mutations: {
+    DELETE_VEHICLE(state, updatedVehicle) {
+      const vehicleIndex = state.vehicles.findIndex((vehicle) => vehicle.id === updatedVehicle.id)
+
+      state.vehicles = [
+        ...state.vehicles.slice(0, vehicleIndex),
+        ...state.vehicles.slice(vehicleIndex + 1)
+      ]
+    },
+    UPDATE_VEHICLE(state, updatedVehicle) {
+      const vehicleIndex = state.vehicles.findIndex((vehicle) => vehicle.id === updatedVehicle.id)
+
+      state.vehicles = [
+        ...state.vehicles.slice(0, vehicleIndex),
+        updatedVehicle,
+        ...state.vehicles.slice(vehicleIndex + 1)
+      ]
+    },
+    ADD_VEHICLE(state, vehicle) {
+      state.vehicles.unshift(vehicle)
+    },
     DELETE_DRIVER(state, driverId) {
       const driverIndex = state.drivers.findIndex((driver) => driver.id === driverId)
       state.drivers = [
@@ -43,6 +63,21 @@ export default createStore({
     }
   },
   actions: {
+    updateVehicle({ commit }, updatedVehicle) {
+      commit('UPDATE_VEHICLE', updatedVehicle)
+    },
+    addVehicle({ commit }, vehicle) {
+      const enrichedVehicleData = {
+        ...vehicle,
+        status: {
+          active: false,
+          location: 'Los Angeles, CA',
+          bearing: Math.floor(Math.random() * 360),
+          speed: Math.floor(Math.random() * 100)
+        }
+      }
+      commit('ADD_VEHICLE', enrichedVehicleData)
+    },
     deleteDriver({ commit }, driverId) {
       commit('DELETE_DRIVER', driverId)
     },
@@ -67,6 +102,10 @@ export default createStore({
     getDriverFromId: (state) => (id) => {
       const driverIndex = state.drivers.findIndex((driver) => driver.id === id)
       return state.drivers[driverIndex]
+    },
+    getVehicleFromId: (state) => (id) => {
+      const vehicleIndex = state.vehicles.findIndex((vehicle) => vehicle.id === id)
+      return state.vehicles[vehicleIndex]
     }
   }
 })

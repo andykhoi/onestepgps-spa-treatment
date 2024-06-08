@@ -53,6 +53,7 @@ const deleteDriver = (driverId) => {
     <ImageCarousel
       :images="headshotImages"
       :image="image"
+      :objectFit="'cover'"
       @update:image="
         (newImage) => {
           image = newImage
@@ -114,14 +115,16 @@ const deleteDriver = (driverId) => {
   background-color: #f1f1f1;
 }
 
-/* .modal-body {
-  height: 100%;
-  padding-bottom: 120px;
-} */
+.modal-body {
+  height: calc(100% - 263px);
+  overflow-y: scroll;
+}
 
 @media screen and (min-width: 768px) {
   .modal-body {
     /* padding-bottom: 120px; */
+    height: auto;
+    overflow-y: initial;
   }
 
   .driver-modal-actions {

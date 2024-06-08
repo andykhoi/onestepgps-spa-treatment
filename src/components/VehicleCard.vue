@@ -1,7 +1,20 @@
+<script setup>
+import { useStore } from 'vuex'
+
+const props = defineProps({
+  vehicle: Object
+})
+
+const { dispatch } = useStore()
+
+const showModal = (modalName, id) => {
+  dispatch('showModal', { modalName, id })
+}
+</script>
 <template>
   <div class="vehicle-card">
-    <div class="vehicle-card-new">Recently Added</div>
-    <div class="vehicle-card-edit">
+    <!-- <div class="vehicle-card-new">Recently Added</div> -->
+    <div class="vehicle-card-edit" @click="showModal('vehicleModal', props.vehicle.id)">
       <svg
         width="40"
         height="40"
@@ -20,33 +33,34 @@
       </svg>
     </div>
     <div class="vehicle-card-model">
-      <img class="small" src="../assets/images/sedan_small.png" />
-      <img class="large" src="../assets/images/sedan_large.png" />
+      <img :src="`/${props.vehicle.model}`" />
+      <!-- <img class="small" src="../assets/images/sedan_small.png" /> -->
+      <!-- <img class="large" src="../assets/images/sedan_large.png" /> -->
     </div>
     <div class="vehicle-card-specs">
       <div class="vehicle-card-spec b-r b-b">
         <p>Title</p>
-        <p>Vehicle #1</p>
+        <p>{{ props.vehicle.title }}</p>
       </div>
       <div class="vehicle-card-spec b-r b-b">
         <p>License Plate</p>
-        <p>HYB2405</p>
+        <p>{{ props.vehicle.license_plate_number }}</p>
       </div>
       <div class="vehicle-card-spec b-b">
         <p>Vin</p>
-        <p>1003330440</p>
+        <p>{{ props.vehicle.vin }}</p>
       </div>
       <div class="vehicle-card-spec b-r">
         <p>Driver</p>
-        <p>Vanessa B.</p>
+        <p>{{ props.vehicle.driverId }}</p>
       </div>
       <div class="vehicle-card-spec b-r">
         <p>Odometer</p>
-        <p>102339</p>
+        <p>{{ props.vehicle.odometer }}</p>
       </div>
       <div class="vehicle-card-spec">
         <p>Last Service Date</p>
-        <p>10-20-2023</p>
+        <p>{{ props.vehicle.last_service_date }}</p>
       </div>
     </div>
   </div>
@@ -86,12 +100,18 @@
   align-items: center;
 }
 
-.vehicle-card-model .large {
+/* .vehicle-card-model .large {
   display: none;
 }
 
 .vehicle-card-model .small {
   display: block;
+} */
+
+.vehicle-card-model img {
+  width: 180px;
+  height: 100px;
+  object-fit: contain;
 }
 
 .vehicle-card-specs {
@@ -159,10 +179,17 @@
   .vehicle-card-model .small {
     display: none;
   }
+
+  .vehicle-card-model img {
+    width: 160px;
+    height: 120px;
+    object-fit: contain;
+  }
+
   .vehicle-card-specs {
     flex-grow: 2;
     grid-template-rows: 50% 50%;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
     height: 100%;
     box-shadow: none;
     /* border-bottom: 4px solid transparent; */

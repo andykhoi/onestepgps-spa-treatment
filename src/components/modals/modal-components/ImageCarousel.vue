@@ -1,7 +1,8 @@
 <script setup>
 const props = defineProps({
   images: Array,
-  image: String
+  image: String,
+  objectFit: String
 })
 
 const emit = defineEmits(['update:image'])
@@ -46,7 +47,7 @@ const nextImage = () => {
       </svg>
     </div>
     <div class="carousel-image">
-      <img :src="`/${props.image}`" />
+      <img :src="`/${props.image}`" :style="{ objectFit: props.objectFit }" />
     </div>
     <div class="carousel-next" @click="nextImage">
       <svg
@@ -77,7 +78,7 @@ const nextImage = () => {
 .carousel-image img {
   height: 252px;
   width: 212px;
-  object-fit: cover;
+  /* object-fit: cover; */
   border-radius: 8px;
 }
 </style>

@@ -1,16 +1,23 @@
 <script setup>
-defineProps({
-  driver: String,
+import { computed, ref } from 'vue'
+import { useStore } from 'vuex'
+const props = defineProps({
+  driverId: String,
   speed: Number,
   location: String,
   title: String
 })
+
+const { getters } = useStore()
+
+const driver = computed(() => getters.getDriverFromId(props.driverId))
+const driverName = ref(driver.value ? driver.value.name : null)
 </script>
 
 <template>
   <div class="active-vehicle">
     <div class="vehicle-icon">
-      <div v-if="driver === ''">
+      <div v-if="driver === undefined">
         <svg
           width="28"
           height="28"
@@ -25,14 +32,14 @@ defineProps({
         </svg>
       </div>
       <div v-else class="driver-initials">
-        {{ driver.substring(0, 1) }}
-        {{ driver.substring(driver.indexOf(' ') + 1, driver.indexOf(' ') + 2) }}
+        {{ driverName.substring(0, 1) }}
+        {{ driverName.substring(driverName.indexOf(' ') + 1, driverName.indexOf(' ') + 2) }}
       </div>
     </div>
     <div class="vehicle-information">
       <div class="vehicle-name-location">
         <div class="vehicle-name">
-          {{ driver || title }}
+          {{ driverName || title }}
         </div>
         <div class="vehicle-location">
           {{ location }}

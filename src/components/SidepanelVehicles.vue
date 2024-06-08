@@ -14,7 +14,7 @@ const activeVehicles = computed(() => store.getters.getActiveVehicles)
     <div :key="vehicle.vin" v-for="vehicle in activeVehicles">
       <ActiveVehicle
         :title="vehicle.title"
-        :driver="vehicle.driver"
+        :driverId="vehicle.driverId"
         :location="vehicle.status.location"
         :speed="vehicle.status.speed"
       />

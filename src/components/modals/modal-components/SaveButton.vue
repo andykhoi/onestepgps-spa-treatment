@@ -22,7 +22,8 @@ const handleSave = () => {
   text-align: center;
   background-color: #000000;
   color: white;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 0.9rem;
   border-radius: 8px;
 }
 

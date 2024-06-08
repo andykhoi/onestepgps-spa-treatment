@@ -1,24 +1,16 @@
 <script setup>
 import VehicleCard from './VehicleCard.vue'
-
+import { computed } from 'vue'
 import { useStore } from 'vuex'
 
-// const store = useStore()
+const store = useStore()
 
-// const drivers = store.getters.getDrivers
-// console.log(drivers)
+const vehicles = computed(() => store.getters.getVehicles)
 </script>
 
 <template>
-  <!-- <div></div> -->
   <div class="vehicle-card-grid">
-    <VehicleCard />
-    <VehicleCard />
-    <VehicleCard />
-    <VehicleCard />
-    <VehicleCard />
-    <VehicleCard />
-    <VehicleCard />
+    <VehicleCard v-for="vehicle in vehicles" :vehicle="vehicle" :key="vehicle.id" />
   </div>
 </template>
 

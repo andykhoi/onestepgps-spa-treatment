@@ -62,6 +62,7 @@ const licenseNumber = defineModel('licenseNumber')
 
 .driver-form-input input::placeholder {
   font-weight: 400;
+  opacity: 0.5;
 }
 
 @media screen and (min-width: 768px) {
