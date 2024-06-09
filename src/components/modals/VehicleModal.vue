@@ -7,7 +7,7 @@ import ImageCarousel from './modal-components/ImageCarousel.vue'
 
 import { v4 as uuidv4 } from 'uuid'
 
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useStore } from 'vuex'
 
 const {
@@ -38,12 +38,19 @@ const updateVehicle = (updatedVehicle) => {
 const deleteVehicle = (vehicleId) => {
   dispatch('deleteVehicle', vehicleId)
 }
+
+const modalBodyHeight = ref('100%')
+
+onMounted(() => {
+  modalBodyHeight.value = `calc(100% - ${document.getElementsByClassName('driver-modal-actions')[0].clientHeight}px - 81px)`
+  console.log(modalBodyHeight.value)
+})
 </script>
 
 <template>
   <ModalHeader v-if="modal.id !== null" :title="'Editing Vehicle'" />
   <ModalHeader v-if="modal.id === null" :title="'Add A New Vehicle'" />
-  <div class="modal-body">
+  <div class="modal-body" :style="{ height: modalBodyHeight }">
     <ImageCarousel
       :images="vehicleImages"
       :image="model"

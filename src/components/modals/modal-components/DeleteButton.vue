@@ -18,7 +18,9 @@ const handleDelete = () => {
 
 <style scoped>
 .modal-delete {
-  padding: 24px 0px;
+  /* padding: 24px 0px; */
+  /* padding: 20px 20px 0px 20px; */
+  padding-top: 20px;
   text-align: center;
   /* background-color: #000000; */
   text-decoration: underline;

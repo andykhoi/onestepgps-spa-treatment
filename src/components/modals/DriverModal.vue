@@ -7,7 +7,7 @@ import ImageCarousel from './modal-components/ImageCarousel.vue'
 
 import { v4 as uuidv4 } from 'uuid'
 
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useStore } from 'vuex'
 
 const {
@@ -44,12 +44,23 @@ const updateDriver = (updatedDriver) => {
 const deleteDriver = (driverId) => {
   dispatch('deleteDriver', driverId)
 }
+
+const modalBodyHeight = ref('100%')
+onMounted(() => {
+  modalBodyHeight.value = `calc(100% - ${document.getElementsByClassName('driver-modal-actions')[0].clientHeight}px - 81px)`
+  console.log(modalBodyHeight.value)
+})
 </script>
 
 <template>
   <ModalHeader v-if="modal.id !== null" :title="'Editing Driver'" />
   <ModalHeader v-if="modal.id === null" :title="'Create A Driver Profile'" />
-  <div class="modal-body">
+  <div
+    class="modal-body"
+    :style="{
+      height: modalBodyHeight
+    }"
+  >
     <ImageCarousel
       :images="headshotImages"
       :image="image"
@@ -113,10 +124,11 @@ const deleteDriver = (driverId) => {
   bottom: 0;
   padding: 20px;
   background-color: #f1f1f1;
+  box-shadow: 0px 0px 2px 0px #0000006e;
 }
 
 .modal-body {
-  height: calc(100% - 263px);
+  /* height: calc(100% - 200px); */
   overflow-y: scroll;
 }
 
