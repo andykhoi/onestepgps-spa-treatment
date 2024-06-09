@@ -141,7 +141,7 @@ const { x, y } = useDraggable(el, {
   height: 100%;
   touch-action: none;
   display: flex;
-  bottom: calc(-100% + 72px);
+  bottom: calc(-100% + 80px);
   flex-direction: column;
   background-color: #f5f5f5;
   position: fixed;
@@ -175,16 +175,21 @@ const { x, y } = useDraggable(el, {
 .active-vehicle-count {
   display: flex;
   gap: 8px;
+  font-weight: 600;
 }
 
 .active-vehicle-list {
   overflow-y: scroll;
+  padding: 28px;
+  padding-top: 12px;
+  display: grid;
+  grid-gap: 16px;
 }
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 28px 12px 28px;
+  padding: 8px 28px 16px 28px;
 }
 
 .vehicle-icon {

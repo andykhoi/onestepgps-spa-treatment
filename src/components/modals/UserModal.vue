@@ -1,37 +1,12 @@
 <script setup>
+// import { ref } from 'vue'
 import ModalHeader from './modal-components/ModalHeader.vue'
 import UserForm from './modal-components/UserForm.vue'
-
-// import { v4 as uuidv4 } from 'uuid'
-
-// import { computed, ref } from 'vue'
-// import { useStore } from 'vuex'
-
-// const {
-//   getters,
-//   dispatch,
-//   state: { modal }
-// } = useStore()
-
-// const driver = computed(() => getters.getDriverFromId(modal.id))
-
-// const name = ref(driver.value ? driver.value.name : '')
-// const phoneNumber = ref(driver.value ? driver.value.phoneNumber : '')
-// const email = ref(driver.value ? driver.value.email : '')
-// const licenseNumber = ref(driver.value ? driver.value.licenseNumber : '')
-
-// const image = ref()
-
-// const addDriver = (driver) => {
-//   dispatch('addDriver', driver)
-// }
-
-// const updateDriver = (updatedDriver) => {
-//   dispatch('updateDriver', updatedDriver)
-// }
-// const deleteDriver = (driverId) => {
-//   dispatch('deleteDriver', driverId)
-// }
+// const modalBodyHeight = ref('100%')
+// onMounted(() => {
+//   modalBodyHeight.value = `calc(100% - 81px)`
+// //   console.log(modalBodyHeight.value)
+// })
 </script>
 
 <template>
@@ -65,7 +40,7 @@ import UserForm from './modal-components/UserForm.vue'
 }
 
 .modal-body {
-  height: calc(100% - 263px);
+  height: calc(100% - 81px);
   overflow-y: scroll;
 }
 

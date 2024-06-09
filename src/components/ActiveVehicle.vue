@@ -113,23 +113,6 @@ const showModal = (modalName, id) => {
   /* padding: 24px 28px; */
 }
 
-.active-vehicle::after {
-  display: none;
-  position: absolute;
-  content: '';
-  background-color: #e8e8e8;
-  width: calc(100% + 24px);
-  height: calc(100% + 20px);
-  z-index: -1;
-  top: -10px;
-  left: -12px;
-  border-radius: 18px;
-}
-
-.active-vehicle:hover::after {
-  display: block;
-}
-
 .vehicle-icon {
   width: 44px;
   height: 44px;
@@ -182,5 +165,24 @@ const showModal = (modalName, id) => {
   top: -8px;
   /* width: 16px; */
   transition: transform 1000ms linear;
+}
+
+@media screen and (min-width: 992px) {
+  .active-vehicle::after {
+    display: none;
+    position: absolute;
+    content: '';
+    background-color: #e8e8e8;
+    width: calc(100% + 24px);
+    height: calc(100% + 20px);
+    z-index: -1;
+    top: -10px;
+    left: -12px;
+    border-radius: 18px;
+  }
+
+  .active-vehicle:hover::after {
+    display: block;
+  }
 }
 </style>
