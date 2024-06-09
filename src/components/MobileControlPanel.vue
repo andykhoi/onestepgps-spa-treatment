@@ -113,7 +113,8 @@ const showModal = ({ modalName, id }) => {
 
 .mobile-control-panel {
   padding: 20px 20px 0px 20px;
-  border-bottom: 1px solid #d9d9d9;
+  /* border-bottom: 1px solid #d9d9d9; */
+  box-shadow: 0px 0px 3px 0px hsl(0deg 0% 12% / 35%);
   position: sticky;
   top: 0;
   background-color: #f0f0f0;
@@ -125,6 +126,8 @@ const showModal = ({ modalName, id }) => {
     padding-top: 12px;
     border-bottom: 0;
     padding-bottom: 12px;
+    border-bottom: 1px solid #d9d9d9;
+    box-shadow: none;
   }
 
   .add-tos-profile-wrapper {

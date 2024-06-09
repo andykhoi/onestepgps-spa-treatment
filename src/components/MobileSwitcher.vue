@@ -32,6 +32,8 @@ const updateActiveContent = (activeContent) => {
 .mobile-switcher {
   display: flex;
   position: relative;
+  box-shadow: 0px 0px 0px 0px gray;
+  margin-top: 12px;
 }
 
 .switcher-button {
