@@ -10,7 +10,7 @@ const showModal = ({ modalName, id }) => {
 
 <template>
   <div class="mobile-add-tos">
-    <div class="mobile-add-to-icon">
+    <!-- <div class="mobile-add-to-icon">
       <svg
         width="28"
         height="28"
@@ -23,14 +23,19 @@ const showModal = ({ modalName, id }) => {
           fill="black"
         />
       </svg>
-    </div>
+    </div> -->
     <div
       class="mobile-add-to-button mobile-add-to-vehicle"
       @click="showModal({ modalName: 'vehicleModal', id: null })"
     >
-      Vehicle
+      Add Vehicle
     </div>
-    <div class="mobile-add-to-button mobile-add-to-driver">Driver</div>
+    <div
+      class="mobile-add-to-button mobile-add-to-driver"
+      @click="showModal({ modalName: 'driverModal', id: null })"
+    >
+      Add Driver
+    </div>
   </div>
 </template>
 
@@ -57,6 +62,7 @@ const showModal = ({ modalName, id }) => {
 
 .mobile-add-to-button {
   flex-grow: 2;
+  justify-content: center;
   display: flex;
   align-items: center;
   /* font-size: 1rem; */
@@ -64,12 +70,12 @@ const showModal = ({ modalName, id }) => {
 }
 
 .mobile-add-to-vehicle {
-  padding: 0px 8px;
+  /* padding: 0px 8px; */
 }
 
 .mobile-add-to-driver {
   border-left: 1px solid #bbbbbb;
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
   /* border: 1px solid #bbbbbb; */
 }
 </style>
