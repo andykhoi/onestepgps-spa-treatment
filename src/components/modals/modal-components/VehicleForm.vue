@@ -74,7 +74,7 @@ const allDrivers = computed(() => store.getters.getDrivers)
   appearance: none;
   border: none;
   background-color: transparent;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   white-space: nowrap; /* Prevent text from wrapping to the next line */
   overflow: hidden; /* Hide the overflowed text */
@@ -106,6 +106,10 @@ select:valid {
   .vehicle-form {
     grid-template-columns: repeat(3, minmax(150px, 1fr));
     grid-template-rows: auto auto auto;
+  }
+
+  .vehicle-form-input input {
+    font-size: 0.9rem;
   }
 
   .vehicle-form-input:nth-of-type(1),
