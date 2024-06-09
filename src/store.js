@@ -174,6 +174,9 @@ export default createStore({
     },
     driverFilters: {
       searchText: ''
+    },
+    vehicleFilters: {
+      searchText: ''
     }
   },
   mutations: {
@@ -230,6 +233,9 @@ export default createStore({
     },
     SET_DRIVER_FILTER_SEARCH_TEXT(state, searchText) {
       state.driverFilters.searchText = searchText
+    },
+    SET_VEHICLE_FILTER_SEARCH_TEXT(state, searchText) {
+      state.vehicleFilters.searchText = searchText
     }
   },
   actions: {
@@ -291,12 +297,15 @@ export default createStore({
     },
     setDriverFilterSearchText({ commit }, searchText) {
       commit('SET_DRIVER_FILTER_SEARCH_TEXT', searchText)
+    },
+    setVehicleFilterSearchText({ commit }, searchText) {
+      commit('SET_VEHICLE_FILTER_SEARCH_TEXT', searchText)
     }
   },
   getters: {
     getActiveContent: (state) => state.activeContent,
     getModal: (state) => state.modal,
-    getVehicles: (state) => state.vehicles,
+    // getVehicles: (state) => state.vehicles,
     getActiveVehicles: (state) => state.vehicles.filter((vehicle) => vehicle.status.active),
     getDrivers: (state) => {
       if (state.driverFilters.searchText) {
@@ -307,6 +316,16 @@ export default createStore({
         })
       }
       return state.drivers
+    },
+    getVehicles: (state) => {
+      if (state.vehicleFilters.searchText) {
+        return state.vehicles.filter((vehicle) => {
+          return Object.values(vehicle).some(
+            (value) => typeof value === 'string' && value.includes(state.vehicleFilters.searchText)
+          )
+        })
+      }
+      return state.vehicles
     },
     getDriverFromId: (state) => (id) => {
       return state.drivers.find((driver) => driver.id === id)

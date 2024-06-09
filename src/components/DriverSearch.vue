@@ -42,6 +42,7 @@ const searchText = computed({
   border-radius: 24px;
   margin-left: 20px;
   margin-right: 20px;
+  border: 1px solid #d4d4d4;
   /* position: sticky; */
   /* top: 0; */
 }

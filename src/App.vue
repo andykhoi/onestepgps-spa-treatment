@@ -7,7 +7,7 @@ import SidepanelTitle from './components/SidepanelTitle.vue'
 import SidepanelVehicles from './components/SidepanelVehicles.vue'
 import DriverSearch from './components/DriverSearch.vue'
 import VehicleSearch from './components/VehicleSearch.vue'
-import Modal from './components/modals/Modal.vue'
+import ModalContainer from './components/modals/ModalContainer.vue'
 
 import { useStore } from 'vuex'
 
@@ -33,7 +33,7 @@ const store = useStore()
         <DriverCardGrid />
       </div>
     </div>
-    <Modal />
+    <ModalContainer />
     <VehicleDrawer />
   </div>
 </template>
@@ -67,8 +67,8 @@ const store = useStore()
   }
   .sidepanel {
     display: block;
-    min-width: 400px;
-    max-width: 400px;
+    min-width: 372px;
+    max-width: 372px;
     border-right: 1px solid #d4d4d4;
     /* padding: 0px 40px; */
     display: flex;

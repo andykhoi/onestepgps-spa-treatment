@@ -17,7 +17,7 @@
   },
   {
     "id": "929ff3bd-e9cd-4f6f-b3ba-fb6752158ebe",
-    "model": "vehicle2.png",
+    "model": "vehicle4.png",
     "title": "Vehicle #2",
     "driverId": "f5a1b5d3-2b4f-4a6d-bc39-fd993d4e94f7",
     "license_plate_number": "DEF5678",
@@ -188,7 +188,7 @@
       "active": true,
       "location": "San Francisco, CA",
       "bearing": 165,
-      "speed": 100
+      "speed": 12
     }
   },
   {
@@ -204,7 +204,7 @@
       "active": true,
       "location": "San Diego, CA",
       "bearing": 180,
-      "speed": 105
+      "speed": 88
     }
   },
   {
@@ -220,7 +220,7 @@
       "active": true,
       "location": "San Jose, CA",
       "bearing": 195,
-      "speed": 110
+      "speed": 38
     }
   },
   {
@@ -236,7 +236,7 @@
       "active": true,
       "location": "Fresno, CA",
       "bearing": 210,
-      "speed": 115
+      "speed": 19
     }
   },
   {
@@ -252,7 +252,7 @@
       "active": true,
       "location": "Los Angeles, CA",
       "bearing": 225,
-      "speed": 120
+      "speed": 77
     }
   }
 ]

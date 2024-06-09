@@ -1,3 +1,13 @@
+<script setup>
+import { useStore } from 'vuex'
+
+const store = useStore()
+
+const showModal = (modalName, id) => {
+  store.dispatch('showModal', { modalName, id })
+}
+</script>
+
 <template>
   <div class="sidepanel-title">
     <div class="sidepanel-logo">
@@ -33,7 +43,7 @@
         </defs>
       </svg>
     </div>
-    <div class="filter-button">
+    <div class="filter-button" @click="showModal('errorModal')">
       <svg
         width="28"
         height="28"

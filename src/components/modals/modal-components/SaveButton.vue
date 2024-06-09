@@ -5,13 +5,14 @@ defineProps({
   saveButtonCopy: String
 })
 
-const handleSave = () => {
-  emit('onSave')
+const handleSave = (e) => {
+  //   console.log(e)
+  emit('onSave', e)
 }
 </script>
 
 <template>
-  <div class="modal-save" @click="handleSave">
+  <div class="modal-save" @click="(e) => handleSave(e)">
     {{ saveButtonCopy }}
   </div>
 </template>

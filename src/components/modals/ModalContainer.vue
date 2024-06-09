@@ -2,6 +2,8 @@
 import DriverModal from './DriverModal.vue'
 import UserModal from './UserModal.vue'
 import VehicleModal from './VehicleModal.vue'
+import LocationModal from './LocationModal.vue'
+import ErrorModal from './ErrorModal.vue'
 
 import { computed, watch } from 'vue'
 import { useStore } from 'vuex'
@@ -30,6 +32,8 @@ const closeModal = () => {
       <DriverModal v-if="activeModal.modalName === 'driverModal'" />
       <VehicleModal v-if="activeModal.modalName === 'vehicleModal'" />
       <UserModal v-if="activeModal.modalName === 'userModal'" />
+      <LocationModal v-if="activeModal.modalName === 'locationModal'" />
+      <ErrorModal v-if="activeModal.modalName === 'errorModal'" />
     </div>
   </div>
 </template>

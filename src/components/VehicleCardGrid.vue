@@ -18,7 +18,7 @@ const vehicles = computed(() => store.getters.getVehicles)
 .vehicle-card-grid {
   display: grid;
   grid-gap: 20px;
-  padding: 0px 20px;
+  padding: 0px 20px 40px 20px;
   grid-template-columns: 100%;
 }
 
@@ -26,6 +26,7 @@ const vehicles = computed(() => store.getters.getVehicles)
   .vehicle-card-grid {
     padding: 0;
     padding-top: 0px;
+    padding-bottom: 40px;
   }
 }
 </style>

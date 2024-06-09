@@ -35,48 +35,13 @@ import UserForm from './modal-components/UserForm.vue'
 </script>
 
 <template>
-  <ModalHeader :title="'Designed By'" />
+  <ModalHeader :title="'Designs By'" />
   <div class="modal-body">
     <div class="me">
       <img src="/me.png" />
     </div>
     <UserForm />
   </div>
-  <!-- <div class="driver-modal-actions">
-    <div class="save-button-wrapper">
-      <SaveButton
-        v-if="modal.id === null"
-        @onSave="
-          () => {
-            addDriver({ name, email, phoneNumber, licenseNumber, image, id: uuidv4() })
-            dispatch('closeModal')
-          }
-        "
-        :saveButtonCopy="'Add Driver'"
-      />
-      <SaveButton
-        v-if="modal.id !== null"
-        @onSave="
-          () => {
-            updateDriver({ name, email, phoneNumber, licenseNumber, image, id: modal.id })
-            dispatch('closeModal')
-          }
-        "
-        :saveButtonCopy="'Update Driver'"
-      />
-    </div>
-    <div v-if="modal.id !== null" class="delete-button-wrapper">
-      <DeleteButton
-        @onDelete="
-          () => {
-            deleteDriver(modal.id)
-            dispatch('closeModal')
-          }
-        "
-        :deleteButtonCopy="'Delete Driver'"
-      />
-    </div>
-  </div> -->
 </template>
 
 <style scoped>

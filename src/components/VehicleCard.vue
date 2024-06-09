@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { useStore } from 'vuex'
 
 const props = defineProps({
@@ -88,6 +88,7 @@ const driver = computed(() => getters.getDriverFromId(props.vehicle.driverId))
   background-color: #e3e3e3;
   border-radius: 18px;
   padding-bottom: 8px;
+  border: 1px solid #d4d4d4;
 }
 
 .vehicle-card-new {
@@ -105,7 +106,7 @@ const driver = computed(() => getters.getDriverFromId(props.vehicle.driverId))
   right: 0;
   top: 0;
   border-top-right-radius: 18px;
-  background-color: #dbdbdb;
+  background-color: #d6d6d6;
   border-bottom-left-radius: 18px;
   cursor: pointer;
 }

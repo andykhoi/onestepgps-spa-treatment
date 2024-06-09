@@ -39,6 +39,7 @@ const drivers = computed(() => store.getters.getDrivers)
   .driver-card-grid {
     padding: 0;
     grid-gap: 16px;
+    padding-bottom: 40px;
     /* padding-top: 16px; */
   }
 }

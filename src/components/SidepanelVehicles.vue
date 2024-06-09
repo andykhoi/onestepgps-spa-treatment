@@ -17,6 +17,7 @@ const activeVehicles = computed(() => store.getters.getActiveVehicles)
         :driverId="vehicle.driverId"
         :location="vehicle.status.location"
         :speed="vehicle.status.speed"
+        :bearing="vehicle.status.bearing"
       />
     </div>
   </div>
