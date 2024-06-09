@@ -126,7 +126,8 @@ const showModal = ({ modalName, id }) => {
     padding-top: 12px;
     border-bottom: 0;
     padding-bottom: 12px;
-    border-bottom: 1px solid #d9d9d9;
+    /* border-bottom: 1px solid #d9d9d9; */
+    /* box-shadow: 0; */
     box-shadow: none;
   }
 

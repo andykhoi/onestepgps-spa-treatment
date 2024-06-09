@@ -48,7 +48,7 @@ const store = useStore()
 .vehicle-content {
   display: flex;
   flex-direction: column;
-  padding-top: 12px;
+  padding-top: 16px;
   gap: 12px;
 }
 
