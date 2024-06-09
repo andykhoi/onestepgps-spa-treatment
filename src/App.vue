@@ -1,47 +1,125 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { onMounted } from 'vue'
+import VehicleDrawer from './components/VehicleDrawer.vue'
+import MobileControlPanel from './components/MobileControlPanel.vue'
+import DriverCardGrid from './components/DriverCardGrid.vue'
+import VehicleCardGrid from './components/VehicleCardGrid.vue'
+import SidepanelTitle from './components/SidepanelTitle.vue'
+import SidepanelVehicles from './components/SidepanelVehicles.vue'
+import DriverSearch from './components/DriverSearch.vue'
+import VehicleSearch from './components/VehicleSearch.vue'
+import ModalContainer from './components/modals/ModalContainer.vue'
+
+import { useStore } from 'vuex'
+
+const store = useStore()
+
+onMounted(() => {
+  const content = document.querySelector('.content')
+  if (content) {
+    content.addEventListener('scroll', (e) => {
+      const panel = document.getElementsByClassName('mobile-control-panel')[0]
+      if (e.target.scrollTop !== 0) {
+        if (panel) {
+          panel.classList.add('desktop-hover')
+        }
+      } else {
+        if (panel) {
+          panel.classList.remove('desktop-hover')
+        }
+      }
+    })
+  }
+})
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="main">
+    <div class="sidepanel">
+      <SidepanelTitle />
+      <div class="sidepanel-vehicles-wrapper">
+        <SidepanelVehicles />
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <div class="content">
+      <MobileControlPanel />
+      <div class="vehicle-content" v-if="store.state.activeContent === 'vehicles'">
+        <VehicleSearch />
+        <VehicleCardGrid />
+      </div>
+      <div class="driver-content" v-if="store.state.activeContent === 'drivers'">
+        <DriverSearch />
+        <DriverCardGrid />
+      </div>
+    </div>
+    <ModalContainer />
+    <VehicleDrawer />
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.sidepanel {
+  display: none;
+  /* overflow-y: scroll; */
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.driver-content,
+.vehicle-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  gap: 12px;
 }
 
-@media (min-width: 1024px) {
-  header {
+@media screen and (min-width: 768px) {
+  .driver-content,
+  .vehicle-content {
+    padding-top: 4px;
+    gap: 16px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .main {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    height: 100%;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
+  .sidepanel {
+    display: block;
+    min-width: 372px;
+    max-width: 372px;
+    border-right: 1px solid #d4d4d4;
+    /* padding: 0px 40px; */
     display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .sidepanel-vehicles-wrapper {
+    flex-grow: 2;
+    overflow-y: scroll;
+    padding: 0px 36px 40px 40px;
+    /* padding-bottom: 40px; */
+    border-right: 4px solid transparent;
+  }
+  .sidepanel-vehicles-wrapper::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+
+  .sidepanel-vehicles-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.192);
+  }
+  .content {
+    width: 100%;
+    padding: 0px 48px;
+    height: 100%;
+    overflow-y: scroll;
   }
 }
+
+/* .app {
+  background-color: #f5f5f5;
+} */
 </style>
