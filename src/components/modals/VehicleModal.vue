@@ -134,8 +134,8 @@ onMounted(() => {
   position: absolute;
   width: 100%;
   bottom: 0;
-  /* padding: 20px; */
-  padding: 20px 20px 0px 20px;
+  padding: 20px;
+  /* padding: 20px 20px 0px 20px; */
   background-color: #f4f4f4;
   box-shadow: 0px 0px 2px 0px #0000006e;
 }
