@@ -30,6 +30,7 @@ onMounted(() => {
       }
     })
   }
+  document.title = 'OneStepGps'
 })
 </script>
 
