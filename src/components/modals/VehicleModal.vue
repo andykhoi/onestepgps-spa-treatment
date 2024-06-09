@@ -134,7 +134,7 @@ const deleteVehicle = (vehicleId) => {
 }
 
 .modal-body {
-  height: calc(100% - 263px);
+  height: calc(100% - 243px);
   overflow-y: scroll;
 }
 

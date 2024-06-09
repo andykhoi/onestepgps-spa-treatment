@@ -20,8 +20,10 @@ const showModal = ({ modalName, id }) => {
 
 <style scoped>
 .profile-button {
-  width: 52px;
-  height: 52px;
+  /* width: 52px;
+  height: 52px; */
+  height: 48px;
+  width: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,5 +35,12 @@ const showModal = ({ modalName, id }) => {
 
 .profile-button:hover {
   background-color: #e8e8e8;
+}
+
+@media screen and (min-width: 768px) {
+  .profile-button {
+    width: 52px;
+    height: 52px;
+  }
 }
 </style>

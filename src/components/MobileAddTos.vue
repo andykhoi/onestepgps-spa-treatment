@@ -38,7 +38,7 @@ const showModal = ({ modalName, id }) => {
 .mobile-add-tos {
   display: flex;
   width: 100%;
-  height: 52px;
+  height: 48px;
   /* background-color: #ededed; */
   border-radius: 40px;
   /* border: 1px solid #bbbbbb; */
@@ -49,7 +49,7 @@ const showModal = ({ modalName, id }) => {
 }
 
 .mobile-add-to-icon {
-  width: 52px;
+  width: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,6 +59,7 @@ const showModal = ({ modalName, id }) => {
   flex-grow: 2;
   display: flex;
   align-items: center;
+  /* font-size: 1rem; */
   /* text-align: center; */
 }
 
