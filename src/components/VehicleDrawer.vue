@@ -7,6 +7,7 @@ import { useStore } from 'vuex'
 
 const el = ref(null)
 const open = ref(false)
+const isDragging = ref(false)
 const threshold = ref(100)
 const transitionClass = ref('')
 
@@ -18,6 +19,7 @@ const { x, y } = useDraggable(el, {
   initialValue: { x: 0, y: document.innerHeight - 100 },
   axis: 'y',
   pointerTypes: ['touch'],
+  onStart: () => (isDragging.value = true),
   onEnd: (pointer, event) => {
     const screenHeight = event.view.innerHeight
     const drawerHeight = 100
@@ -28,14 +30,16 @@ const { x, y } = useDraggable(el, {
 
     if (open.value && pointerY > threshold.value) {
       open.value = false
-      y.value = screenHeight - drawerHeight
+      //   y.value = screenHeight - drawerHeight
+      y.value = 'initial'
     } else if (!open.value) {
       if (pointerY < screenHeight - threshold.value) {
         open.value = true
         y.value = 0 // Adjust this value as needed
       } else {
         // If the drawer is closed and moved downward, move it back to the closed position
-        y.value = screenHeight - drawerHeight
+        // y.value = screenHeight - drawerHeight
+        y.value = 'initial'
       }
     }
 
@@ -43,12 +47,23 @@ const { x, y } = useDraggable(el, {
     setTimeout(() => {
       transitionClass.value = ''
     }, 200) // Match this duration with your CSS transition duration
+    isDragging.value = false
   }
 })
+
+// const computedY =
 </script>
 
 <template>
-  <div :class="['drawer', transitionClass]" :style="{ top: `${y}px`, left: `${x}px` }">
+  <div
+    :class="['drawer', transitionClass]"
+    :style="{
+      //   bottom: open ? 'calc(-100% + 84px)' : '',
+      //   top: open ? `0px` : 'auto',
+      top: isDragging ? `${y}px` : open ? '0px' : 'auto',
+      left: `${x}px`
+    }"
+  >
     <div ref="el" class="handle">
       <div class="bar"></div>
     </div>
@@ -126,7 +141,7 @@ const { x, y } = useDraggable(el, {
   height: 100%;
   touch-action: none;
   display: flex;
-  bottom: calc(-100% + 100px);
+  bottom: calc(-100% + 72px);
   flex-direction: column;
   background-color: #f5f5f5;
   position: fixed;
@@ -138,6 +153,14 @@ const { x, y } = useDraggable(el, {
   color: #000000;
   z-index: 100;
 }
+
+/* .drawer.closed {
+  top: auto !important;
+}
+
+.drawer.dragging {
+  top: initial !important;
+} */
 .handle {
   padding: 12px;
 }
@@ -161,7 +184,7 @@ const { x, y } = useDraggable(el, {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 28px 24px 28px;
+  padding: 4px 28px 12px 28px;
 }
 
 .vehicle-icon {
