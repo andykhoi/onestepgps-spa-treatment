@@ -66,7 +66,7 @@ const showModal = (modalName, id) => {
 <style scoped>
 .driver-card {
   display: flex;
-  height: 198.5px;
+  height: 196.5px;
   border-radius: 18px;
   background-color: #e6e6e6;
   position: relative;
