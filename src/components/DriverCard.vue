@@ -66,7 +66,7 @@ const showModal = (modalName, id) => {
 <style scoped>
 .driver-card {
   display: flex;
-  height: 196.5px;
+  height: 198.5px;
   border-radius: 18px;
   background-color: #e6e6e6;
   position: relative;
@@ -167,7 +167,7 @@ const showModal = (modalName, id) => {
 
 @media screen and (min-width: 768px) {
   .driver-card {
-    height: 192.5px;
+    height: 194.5px;
   }
   .driver-card-form-entry {
     padding: 10px 20px;

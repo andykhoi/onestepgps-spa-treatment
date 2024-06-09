@@ -83,7 +83,7 @@ const updateActiveContent = (activeContent) => {
   justify-content: center;
   align-items: center;
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 600;
   flex-grow: 1;
   border-radius: 8px;
   transition: color 100ms ease;

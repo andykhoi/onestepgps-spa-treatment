@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from 'vue'
 import VehicleDrawer from './components/VehicleDrawer.vue'
 import MobileControlPanel from './components/MobileControlPanel.vue'
 import DriverCardGrid from './components/DriverCardGrid.vue'
@@ -12,6 +13,24 @@ import ModalContainer from './components/modals/ModalContainer.vue'
 import { useStore } from 'vuex'
 
 const store = useStore()
+
+onMounted(() => {
+  const content = document.querySelector('.content')
+  if (content) {
+    content.addEventListener('scroll', (e) => {
+      const panel = document.getElementsByClassName('mobile-control-panel')[0]
+      if (e.target.scrollTop !== 0) {
+        if (panel) {
+          panel.classList.add('desktop-hover')
+        }
+      } else {
+        if (panel) {
+          panel.classList.remove('desktop-hover')
+        }
+      }
+    })
+  }
+})
 </script>
 
 <template>

@@ -131,6 +131,10 @@ const showModal = ({ modalName, id }) => {
     box-shadow: none;
   }
 
+  .desktop-hover {
+    box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.25);
+  }
+
   .add-tos-profile-wrapper {
     border-bottom: 1px solid #d4d4d4;
     padding-bottom: 12px;
