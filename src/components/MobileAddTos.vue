@@ -49,7 +49,8 @@ const showModal = ({ modalName, id }) => {
   /* border: 1px solid #bbbbbb; */
   background-color: #e8e8e8;
   border: 1px solid #c4c4c4;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.9rem;
   box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.12);
 }
 

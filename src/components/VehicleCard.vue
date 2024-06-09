@@ -142,7 +142,7 @@ const driver = computed(() => getters.getDriverFromId(props.vehicle.driverId))
   width: 100%;
   display: grid;
   grid-template-columns: repeat(6, 120px);
-  grid-column-gap: 24px;
+  grid-column-gap: 12px;
   align-items: center;
   overflow-x: scroll;
   padding: 0px 8px;
