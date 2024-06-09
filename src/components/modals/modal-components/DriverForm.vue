@@ -53,7 +53,6 @@ const licenseNumber = defineModel('licenseNumber')
   appearance: none;
   border: none;
   background-color: transparent;
-  /* font-size: 0.9rem; */
   font-size: 1rem;
   font-weight: 500;
   white-space: nowrap; /* Prevent text from wrapping to the next line */

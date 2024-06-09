@@ -37,7 +37,7 @@ const searchText = computed({
 <style scoped>
 .driver-search {
   display: flex;
-  padding: 16px 20px;
+  padding: 12px 20px;
   background-color: #e3e3e3;
   border-radius: 24px;
   margin-left: 20px;

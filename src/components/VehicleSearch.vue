@@ -83,7 +83,7 @@ const showModal = (modalName, id) => {
 .vehicle-search {
   flex-grow: 2;
   display: flex;
-  padding: 16px 20px;
+  padding: 12px 20px;
   background-color: #e3e3e3;
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
