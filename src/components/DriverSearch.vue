@@ -53,7 +53,8 @@ const searchText = computed({
   border: none;
   width: 100%;
   background-color: transparent;
-  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
+  font-size: 1rem;
 }
 
 .driver-search-input::placeholder {
@@ -72,6 +73,9 @@ const searchText = computed({
     margin-right: 20px;
   }
 
+  .driver-search-input {
+    font-size: 0.9rem;
+  }
   .driver-search {
     padding: 12px 20px;
   }

@@ -68,9 +68,6 @@ const showModal = (modalName, id) => {
   margin-right: 20px;
   background-color: #e3e3e3;
   border: 1px solid #d4d4d4;
-  /* border-top: 1px solid #d4d4d4;
-  border-right: 1px solid #d4d4d4;
-  border-bottom: 1px solid #d4d4d4; */
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
   cursor: pointer;
@@ -102,7 +99,8 @@ const showModal = (modalName, id) => {
   border: none;
   width: 100%;
   background-color: transparent;
-  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
+  font-size: 1rem;
 }
 
 .vehicle-search-input::placeholder {
@@ -115,6 +113,9 @@ const showModal = (modalName, id) => {
 }
 
 @media screen and (min-width: 768px) {
+  .vehicle-search-input {
+    font-size: 0.9rem;
+  }
   .vehicle-search {
     margin-left: 20px;
   }
