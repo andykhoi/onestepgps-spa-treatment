@@ -22,8 +22,8 @@ const showModal = ({ modalName, id }) => {
 .profile-button {
   /* width: 52px;
   height: 52px; */
-  height: 48px;
-  width: 48px;
+  height: 44px;
+  width: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
