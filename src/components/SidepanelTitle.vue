@@ -75,6 +75,25 @@
   gap: 8px;
   font-size: 0.9rem;
   font-weight: 600;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
   /* justify-content: center; */
+}
+
+.filter-button:after {
+  content: '';
+  display: none;
+  position: absolute;
+  border-radius: 20px;
+  background-color: #e8e8e8;
+  width: calc(100% + 32px);
+  height: calc(100% + 8px);
+  left: -16px;
+  z-index: -1;
+}
+
+.filter-button:hover:after {
+  display: block;
 }
 </style>

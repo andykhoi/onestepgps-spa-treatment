@@ -1,15 +1,19 @@
 <script setup>
+import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
 
 const props = defineProps({
   vehicle: Object
 })
 
-const { dispatch } = useStore()
+const { dispatch, getters } = useStore()
 
 const showModal = (modalName, id) => {
   dispatch('showModal', { modalName, id })
 }
+
+// const driver = ref(getters.getDriverFromId(props.vehicle.driverId))
+const driver = computed(() => getters.getDriverFromId(props.vehicle.driverId))
 </script>
 <template>
   <div class="vehicle-card">
@@ -22,10 +26,10 @@ const showModal = (modalName, id) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
+        <!-- <path
           d="M0 0H22C31.9411 0 40 8.05887 40 18V40H20C8.95431 40 0 31.0457 0 20V0Z"
           fill="#DBDBDB"
-        />
+        /> -->
         <path
           d="M28.7586 14.732L25.268 11.2406C25.1519 11.1245 25.0141 11.0324 24.8624 10.9696C24.7107 10.9067 24.5482 10.8744 24.384 10.8744C24.2198 10.8744 24.0572 10.9067 23.9056 10.9696C23.7539 11.0324 23.6161 11.1245 23.5 11.2406L13.8664 20.875C13.7498 20.9907 13.6574 21.1283 13.5945 21.28C13.5316 21.4317 13.4995 21.5944 13.5 21.7586V25.25C13.5 25.5815 13.6317 25.8995 13.8661 26.1339C14.1005 26.3683 14.4185 26.5 14.75 26.5H18.2414C18.4056 26.5005 18.5683 26.4684 18.72 26.4055C18.8717 26.3426 19.0094 26.2502 19.125 26.1336L28.7586 16.5C28.8747 16.3839 28.9668 16.2461 29.0296 16.0944C29.0925 15.9428 29.1248 15.7802 29.1248 15.616C29.1248 15.4518 29.0925 15.2893 29.0296 15.1376C28.9668 14.9859 28.8747 14.8481 28.7586 14.732ZM26 17.4906L22.5086 14L24.3836 12.125L27.875 15.6156L26 17.4906Z"
           fill="black"
@@ -34,33 +38,43 @@ const showModal = (modalName, id) => {
     </div>
     <div class="vehicle-card-model">
       <img :src="`/${props.vehicle.model}`" />
-      <!-- <img class="small" src="../assets/images/sedan_small.png" /> -->
-      <!-- <img class="large" src="../assets/images/sedan_large.png" /> -->
     </div>
     <div class="vehicle-card-specs">
       <div class="vehicle-card-spec b-r b-b">
         <p>Title</p>
-        <p>{{ props.vehicle.title }}</p>
+        <p :style="{ color: props.vehicle.title ? '#000000' : '#969696' }">
+          {{ props.vehicle.title ? props.vehicle.title : 'N/A' }}
+        </p>
       </div>
       <div class="vehicle-card-spec b-r b-b">
         <p>License Plate</p>
-        <p>{{ props.vehicle.license_plate_number }}</p>
+        <p :style="{ color: props.vehicle.license_plate_number ? '#000000' : '#969696' }">
+          {{ props.vehicle.license_plate_number ? props.vehicle.license_plate_number : 'N/A' }}
+        </p>
       </div>
       <div class="vehicle-card-spec b-b">
         <p>Vin</p>
-        <p>{{ props.vehicle.vin }}</p>
+        <p :style="{ color: props.vehicle.vin ? '#000000' : '#969696' }">
+          {{ props.vehicle.vin ? props.vehicle.vin : 'N/A' }}
+        </p>
       </div>
       <div class="vehicle-card-spec b-r">
         <p>Driver</p>
-        <p>{{ props.vehicle.driverId }}</p>
+        <p :style="{ color: driver ? '#000000' : '#969696' }">
+          {{ driver ? driver.name : 'Unknown' }}
+        </p>
       </div>
       <div class="vehicle-card-spec b-r">
         <p>Odometer</p>
-        <p>{{ props.vehicle.odometer }}</p>
+        <p :style="{ color: props.vehicle.odometer ? '#000000' : '#969696' }">
+          {{ props.vehicle.odometer ? props.vehicle.odometer : 'N/A' }}
+        </p>
       </div>
       <div class="vehicle-card-spec">
         <p>Last Service Date</p>
-        <p>{{ props.vehicle.last_service_date }}</p>
+        <p :style="{ color: props.vehicle.last_service_date ? '#000000' : '#969696' }">
+          {{ props.vehicle.last_service_date ? props.vehicle.last_service_date : 'N/A' }}
+        </p>
       </div>
     </div>
   </div>
@@ -90,6 +104,14 @@ const showModal = (modalName, id) => {
   position: absolute;
   right: 0;
   top: 0;
+  border-top-right-radius: 18px;
+  background-color: #dbdbdb;
+  border-bottom-left-radius: 18px;
+  cursor: pointer;
+}
+
+.vehicle-card-edit:hover {
+  background-color: #d0d0d0;
 }
 
 .vehicle-card-model {

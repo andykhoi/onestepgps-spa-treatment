@@ -75,6 +75,11 @@ const nextImage = () => {
   padding: 20px 20px;
 }
 
+.carousel-back,
+.carousel-next {
+  cursor: pointer;
+}
+
 .carousel-image img {
   height: 252px;
   width: 212px;

@@ -19,6 +19,9 @@
 </template>
 
 <style scoped>
+input:focus-visible {
+  outline: none;
+}
 .driver-search {
   display: flex;
   padding: 16px 20px;
@@ -51,8 +54,8 @@
 
 @media screen and (min-width: 768px) {
   .driver-search {
-    margin-left: 36px;
-    margin-right: 36px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .driver-search {

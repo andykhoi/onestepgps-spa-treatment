@@ -29,6 +29,7 @@ const handleDelete = () => {
 @media screen and (min-width: 768px) {
   .modal-delete {
     padding: 16px 0px;
+    cursor: pointer;
   }
 }
 </style>

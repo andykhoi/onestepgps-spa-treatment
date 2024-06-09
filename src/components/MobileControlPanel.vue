@@ -2,7 +2,7 @@
 import MobileAddTos from './MobileAddTos.vue'
 import ProfileButton from './ProfileButton.vue'
 import MobileSwitcher from './MobileSwitcher.vue'
-import Switcher from './Switcher.vue'
+import Switcher from './TabletSwitcher.vue'
 
 import { useStore } from 'vuex'
 
@@ -164,6 +164,13 @@ const showModal = ({ modalName, id }) => {
     /* stroke-width: 1px; */
     border: 1px solid #c4c4c4;
     box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+  }
+
+  .add-to-driver:hover,
+  .add-to-vehicle:hover {
+    background-color: #dedede;
+    border: 1px solid hsl(0 0% 57% / 1);
   }
 }
 @media screen and (min-width: 992px) {

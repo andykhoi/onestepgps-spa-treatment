@@ -8,6 +8,11 @@ body.lock {
   overflow: hidden;
 }
 
+input:focus-visible,
+select:focus-visible {
+  outline: none;
+}
+
 #app {
   font-family: 'BeVietnamPro', sans-serif;
   background-color: #f1f1f1;

@@ -28,6 +28,10 @@ const showModal = ({ modalName, id }) => {
   cursor: pointer;
   /* background-color: #ededed; */
   /* border: 1px solid #bbbbbb; */
-  /* border-radius: 30px; */
+  border-radius: 30px;
+}
+
+.profile-button:hover {
+  background-color: #e8e8e8;
 }
 </style>

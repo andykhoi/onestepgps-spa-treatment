@@ -8,6 +8,10 @@ import SidepanelVehicles from './components/SidepanelVehicles.vue'
 import DriverSearch from './components/DriverSearch.vue'
 import VehicleSearch from './components/VehicleSearch.vue'
 import Modal from './components/modals/Modal.vue'
+
+import { useStore } from 'vuex'
+
+const store = useStore()
 </script>
 
 <template>
@@ -20,14 +24,14 @@ import Modal from './components/modals/Modal.vue'
     </div>
     <div class="content">
       <MobileControlPanel />
-      <div class="vehicle-content">
+      <div class="vehicle-content" v-if="store.state.activeContent === 'vehicles'">
         <VehicleSearch />
         <VehicleCardGrid />
       </div>
-      <!-- <div class="driver-content">
+      <div class="driver-content" v-if="store.state.activeContent === 'drivers'">
         <DriverSearch />
         <DriverCardGrid />
-      </div> -->
+      </div>
     </div>
     <Modal />
     <VehicleDrawer />

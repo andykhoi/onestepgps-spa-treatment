@@ -1,5 +1,5 @@
 <script setup>
-import Header from './modal-components/Header.vue'
+import ModalHeader from './modal-components/ModalHeader.vue'
 import DriverForm from './modal-components/DriverForm.vue'
 import SaveButton from './modal-components/SaveButton.vue'
 import DeleteButton from './modal-components/DeleteButton.vue'
@@ -47,13 +47,13 @@ const deleteDriver = (driverId) => {
 </script>
 
 <template>
-  <Header v-if="modal.id !== null" :title="'Editing Driver'" />
-  <Header v-if="modal.id === null" :title="'Create A Driver Profile'" />
+  <ModalHeader v-if="modal.id !== null" :title="'Editing Driver'" />
+  <ModalHeader v-if="modal.id === null" :title="'Create A Driver Profile'" />
   <div class="modal-body">
     <ImageCarousel
       :images="headshotImages"
       :image="image"
-      :objectFit="'cover'"
+      :objectFit="'contain'"
       @update:image="
         (newImage) => {
           image = newImage

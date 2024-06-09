@@ -1,10 +1,16 @@
 <script setup>
+import { useStore } from 'vuex'
+import { computed } from 'vue'
 const title = defineModel('title')
 const vin = defineModel('vin')
 const licensePlateNumber = defineModel('licensePlateNumber')
 const odometer = defineModel('odometer')
-const driverId = defineModel('driverid')
+const driverId = defineModel('driverId')
 const lastServiceDate = defineModel('lastServiceDate')
+
+const store = useStore()
+
+const allDrivers = computed(() => store.getters.getDrivers)
 </script>
 
 <template>
@@ -23,7 +29,12 @@ const lastServiceDate = defineModel('lastServiceDate')
     </div>
     <div class="vehicle-form-input">
       <p>Driver</p>
-      <input type="text" v-model="driverId" placeholder="Enter driverId CHANGE THIS" />
+      <select v-model="driverId" required>
+        <option value="" selected>Select Driver</option>
+        <option v-for="driver in allDrivers" :value="driver.id" :key="driver.id">
+          {{ driver.name }}
+        </option>
+      </select>
     </div>
     <div class="vehicle-form-input">
       <p>Odometer</p>
@@ -56,7 +67,7 @@ const lastServiceDate = defineModel('lastServiceDate')
 
 .vehicle-form-input p {
   font-size: 0.8rem;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .vehicle-form-input input {
@@ -75,19 +86,38 @@ const lastServiceDate = defineModel('lastServiceDate')
   opacity: 0.5;
 }
 
+select {
+  /* color: gray; */
+  opacity: 0.6;
+  color: gray;
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+select:valid {
+  opacity: 1;
+  font-weight: 500;
+  color: black;
+}
+
 @media screen and (min-width: 768px) {
   .vehicle-form {
     grid-template-columns: repeat(3, minmax(150px, 1fr));
     grid-template-rows: auto auto auto;
   }
 
-  /* .vehicle-form-input:nth-of-type(1) {
+  .vehicle-form-input:nth-of-type(1),
+  .vehicle-form-input:nth-of-type(2),
+  .vehicle-form-input:nth-of-type(4),
+  .vehicle-form-input:nth-of-type(5) {
     border-right: 1px solid #d4d4d4;
   }
 
-  .vehicle-form-input:nth-of-type(3) {
-    border-right: 1px solid #d4d4d4;
+  .vehicle-form-input:nth-of-type(4),
+  .vehicle-form-input:nth-of-type(5) {
     border-bottom: 1px solid #d4d4d4;
-  } */
+  }
 }
 </style>

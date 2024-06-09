@@ -30,6 +30,7 @@ const handleSave = () => {
 @media screen and (min-width: 768px) {
   .modal-save {
     padding: 16px 28px;
+    cursor: pointer;
   }
 }
 </style>

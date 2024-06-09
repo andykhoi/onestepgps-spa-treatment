@@ -47,6 +47,25 @@ const closeModal = () => {
   position: absolute;
   right: 26px;
   top: 26px;
+  cursor: pointer;
+  z-index: 1;
+  /* border-radius: 6px; */
+}
+
+.close-modal:after {
+  display: none;
+  position: absolute;
+  content: '';
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  background: #e8e8e8;
+  top: -4px;
+  left: -4px;
+  border-radius: 6px;
+  z-index: -1;
+}
+.close-modal:hover:after {
+  display: block;
 }
 
 .modal-title {

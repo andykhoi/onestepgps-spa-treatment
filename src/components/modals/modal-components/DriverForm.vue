@@ -46,7 +46,7 @@ const licenseNumber = defineModel('licenseNumber')
 
 .driver-form-input p {
   font-size: 0.8rem;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .driver-form-input input {

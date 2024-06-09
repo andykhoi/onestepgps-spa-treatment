@@ -1,5 +1,5 @@
 <script setup>
-import Header from './modal-components/Header.vue'
+import ModalHeader from './modal-components/ModalHeader.vue'
 import VehicleForm from './modal-components/VehicleForm.vue'
 import SaveButton from './modal-components/SaveButton.vue'
 import DeleteButton from './modal-components/DeleteButton.vue'
@@ -25,7 +25,6 @@ const vin = ref(vehicle.value ? vehicle.value.vin : '')
 const lastServiceDate = ref(vehicle.value ? vehicle.value.last_service_date : '')
 const odometer = ref(vehicle.value ? vehicle.value.odometer : '')
 const driverId = ref(vehicle.value ? vehicle.value.driverId : '')
-
 const vehicleImages = ref(['vehicle1.png', 'vehicle2.png', 'vehicle3.png', 'vehicle4.png'])
 
 const addVehicle = (vehicle) => {
@@ -36,14 +35,14 @@ const updateVehicle = (updatedVehicle) => {
   dispatch('updateVehicle', updatedVehicle)
 }
 
-// const deleteVehicle = (driverId) => {
-//   dispatch('deleteDriver', driverId)
-// }
+const deleteVehicle = (vehicleId) => {
+  dispatch('deleteVehicle', vehicleId)
+}
 </script>
 
 <template>
-  <Header v-if="modal.id !== null" :title="'Editing Vehicle'" />
-  <Header v-if="modal.id === null" :title="'Add A New Vehicle'" />
+  <ModalHeader v-if="modal.id !== null" :title="'Editing Vehicle'" />
+  <ModalHeader v-if="modal.id === null" :title="'Add A New Vehicle'" />
   <div class="modal-body">
     <ImageCarousel
       :images="vehicleImages"
@@ -71,6 +70,7 @@ const updateVehicle = (updatedVehicle) => {
         @onSave="
           () => {
             addVehicle({
+              ...vehicle,
               title,
               model,
               vin,
@@ -89,22 +89,32 @@ const updateVehicle = (updatedVehicle) => {
         v-if="modal.id !== null"
         @onSave="
           () => {
-            updateDriver({ name, email, phoneNumber, licenseNumber, image, id: modal.id })
+            updateVehicle({
+              ...vehicle,
+              title,
+              model,
+              vin,
+              odometer,
+              license_plate_number: licensePlateNumber,
+              last_service_date: lastServiceDate,
+              driverId,
+              id: modal.id
+            })
             dispatch('closeModal')
           }
         "
-        :saveButtonCopy="'Update Driver'"
+        :saveButtonCopy="'Update Vehicle'"
       />
     </div>
     <div v-if="modal.id !== null" class="delete-button-wrapper">
       <DeleteButton
         @onDelete="
           () => {
-            deleteDriver(modal.id)
+            deleteVehicle(modal.id)
             dispatch('closeModal')
           }
         "
-        :deleteButtonCopy="'Delete Driver'"
+        :deleteButtonCopy="'Delete Vehicle'"
       />
     </div>
   </div>

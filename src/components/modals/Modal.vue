@@ -19,21 +19,18 @@ watch(activeModal, () => {
   }
 })
 
-// const showModal = ({ modalName, id }) => {
-//   store.dispatch('showModal', { modalName, id })
-// }
+const closeModal = () => {
+  store.dispatch('closeModal')
+}
 </script>
 
 <template>
-  <div class="modal" v-if="activeModal.modalName !== ''">
-    <div class="modal-wrapper">
+  <div class="modal" v-if="activeModal.modalName !== ''" @click="closeModal">
+    <div class="modal-wrapper" @click="(e) => e.stopPropagation()">
       <DriverModal v-if="activeModal.modalName === 'driverModal'" />
       <VehicleModal v-if="activeModal.modalName === 'vehicleModal'" />
       <UserModal v-if="activeModal.modalName === 'userModal'" />
     </div>
-    <!-- <button @click="showModal({ modalName: 'driverModal', id: null })">show driver modal</button>
-    <button @click="showModal({ modalName: 'vehicleModal', id: null })">show vehicle modal</button>
-    <button @click="showModal({ modalName: 'userModal', id: null })">show user modal</button> -->
   </div>
 </template>
 
@@ -41,7 +38,6 @@ watch(activeModal, () => {
 .modal {
   top: 0;
   z-index: 1000;
-  /* background: rgba(0, 0, 0, 0.6); */
   position: fixed;
   width: 100%;
   height: 100%;

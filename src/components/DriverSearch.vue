@@ -1,3 +1,14 @@
+<script setup>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+const store = useStore()
+
+const searchText = computed({
+  get: () => store.state.driverFilters.searchText,
+  set: (value) => store.commit('SET_DRIVER_FILTER_SEARCH_TEXT', value)
+})
+</script>
+
 <template>
   <div class="driver-search">
     <div class="search-icon">
@@ -14,7 +25,12 @@
         />
       </svg>
     </div>
-    <input class="driver-search-input" type="text" placeholder="A name, email, or phone number" />
+    <input
+      v-model="searchText"
+      class="driver-search-input"
+      type="text"
+      placeholder="A name, email, or phone number"
+    />
   </div>
 </template>
 
@@ -51,8 +67,8 @@
 
 @media screen and (min-width: 768px) {
   .driver-search {
-    margin-left: 36px;
-    margin-right: 36px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .driver-search {
