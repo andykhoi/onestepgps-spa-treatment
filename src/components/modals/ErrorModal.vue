@@ -4,6 +4,6 @@ import ModalHeader from './modal-components/ModalHeader.vue'
 
 <template>
   <div>
-    <ModalHeader :title="'Please refer to designs'" />
+    <ModalHeader :title="'Please refer to Figma designs'" />
   </div>
 </template>
