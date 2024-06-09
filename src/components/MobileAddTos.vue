@@ -43,13 +43,13 @@ const showModal = ({ modalName, id }) => {
 .mobile-add-tos {
   display: flex;
   width: 100%;
-  height: 48px;
+  height: 44px;
   /* background-color: #ededed; */
   border-radius: 40px;
   /* border: 1px solid #bbbbbb; */
   background-color: #e8e8e8;
   border: 1px solid #c4c4c4;
-  font-weight: 600;
+  font-weight: 500;
   box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.12);
 }
 
@@ -65,8 +65,6 @@ const showModal = ({ modalName, id }) => {
   justify-content: center;
   display: flex;
   align-items: center;
-  /* font-size: 1rem; */
-  /* text-align: center; */
 }
 
 .mobile-add-to-vehicle {
