@@ -87,7 +87,7 @@ const driver = computed(() => getters.getDriverFromId(props.vehicle.driverId))
   position: relative;
   background-color: #e3e3e3;
   border-radius: 18px;
-  padding-bottom: 8px;
+  /* padding-bottom: 8px; */
   border: 1px solid #d4d4d4;
 }
 
@@ -138,7 +138,7 @@ const driver = computed(() => getters.getDriverFromId(props.vehicle.driverId))
 }
 
 .vehicle-card-specs {
-  height: 90px;
+  height: 80px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(6, 120px);
@@ -164,7 +164,7 @@ const driver = computed(() => getters.getDriverFromId(props.vehicle.driverId))
   text-overflow: ellipsis; /* Display ellipsis (...) when text overflows */
 }
 
-.vehicle-card-specs::-webkit-scrollbar {
+/* .vehicle-card-specs::-webkit-scrollbar {
   -webkit-appearance: none;
   height: 8px;
 }
@@ -172,7 +172,7 @@ const driver = computed(() => getters.getDriverFromId(props.vehicle.driverId))
 .vehicle-card-specs::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.207);
-}
+} */
 
 @media screen and (min-width: 768px) {
   .b-r {
