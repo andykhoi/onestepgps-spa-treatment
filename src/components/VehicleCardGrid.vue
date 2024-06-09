@@ -17,13 +17,14 @@ const vehicles = computed(() => store.getters.getVehicles)
 <style scoped>
 .vehicle-card-grid {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 16px;
   padding: 0px 20px 40px 20px;
   grid-template-columns: 100%;
 }
 
 @media screen and (min-width: 992px) {
   .vehicle-card-grid {
+    grid-gap: 20px;
     padding: 0;
     padding-top: 0px;
     padding-bottom: 40px;

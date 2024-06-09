@@ -48,8 +48,8 @@ const store = useStore()
 .vehicle-content {
   display: flex;
   flex-direction: column;
-  padding-top: 24px;
-  gap: 20px;
+  padding-top: 12px;
+  gap: 12px;
 }
 
 @media screen and (min-width: 768px) {
